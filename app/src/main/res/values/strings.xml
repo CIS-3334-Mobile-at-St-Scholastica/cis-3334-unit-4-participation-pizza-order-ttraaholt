@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">PizzaOrder</string>
     <string name="small_pizza">Small Pizza</string>
+    <string name="checkboxdelivery">CheckBoxDelivery</string>
+    <string name="mediumpizza">MediumPizza</string>
+    <string name="large_pizza">Large Pizza</string>
+    <string name="checkboxextracheese">CheckBoxExtraCheese</string>
+    <string-array name="toppings">
+        <item>Pepperoni</item>
+        <item>Ham</item>
+        <item>Sausage</item>
+        <item>Chicken</item>
+    </string-array>
 </resources>
