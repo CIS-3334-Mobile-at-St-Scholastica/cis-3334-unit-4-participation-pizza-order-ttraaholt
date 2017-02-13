@@ -3,6 +3,7 @@ package css.cis3334.pizzaorder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     PizzaOrderInterface pizzaOrderSystem;
     Spinner spin;
     String strSize;
+    boolean extraCheese;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +63,12 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         }
 
         if(chkbxCheese.isChecked()){
-            chkbxCheese = true;
+            extraCheese = true;
         }
 
-        String topping = spinnerToppings.getSelectedItem
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Large", false);
+        String spinText = spin.getSelectedItem().toString();
+
+        String orderDescription = pizzaOrderSystem.OrderPizza(spinText, strSize, extraCheese);
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
